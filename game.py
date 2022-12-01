@@ -1,5 +1,6 @@
 #from human import Human
 import time
+from player import Player
 
 class Game:
 
@@ -14,7 +15,7 @@ class Game:
 
 
     def display_welcome (self):
-        print ("")
+        print ()
         print ("\n Welcome to Rock, Paper, Scissors, Lizard, Spock! \n")
 
     
@@ -46,17 +47,7 @@ class Game:
         time.sleep (.5)
         print ("")
 
+print (Player ("Player one"))
 
 
 
-""" o	Rock crushes Scissors   
-Scissors cuts Paper  
-Paper covers Rock  
-Rock crushes Lizard  
-Lizard poisons Spock  
-Spock smashes Scissors  
-Scissors decapitates Lizard  
-Lizard eats Paper  
-Paper disproves Spock  
-Spock vaporizes Rock  
- """

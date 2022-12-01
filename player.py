@@ -1,14 +1,42 @@
 class Player:
 
-    def __init__(self) -> None:
-       
-        pass
+    def __init__(self, name) -> None:
+        self.name = name
+        #self.gesture_list = ["Rock", "Paper", "Scissor "]
+        #self.get_input ()
+ #       self.gestures ()
+  #      print (self.gesture_list)
 
-    def gesture_input ():
-        gesture_list = ["rock", "paper", "Scissor", "lizard", "spock"]
-        user_input = input ("Enter 0 for rock, 1 for scissor, 2 for paper, 3 for lizard, 4 for spock")
-        return user_input
+    
+    def get_input (self):
+        gesture_list = ["Rock", "Paper", "Scissor"]
+        user_input = input (f'Choose from {gesture_list}')
+        print (f"Player one chooses {user_input}")
+        
+        print (user_input)
+        #return user_input
+
+   
+   
+ #   def gestures (self):
+  #      gesture_one = "rock" 
+  #      self.gesture_list.append (gesture_one)
+  #      gesture_two = "paper" 
+  #      self.gesture_list.append (gesture_two)
+  #      gesture_three = "scissor" 
+  #      self.gesture_list.append (gesture_three)
+        
 
 
-    user_action = gesture_input ()
-    print (user_action)
+   
+
+
+
+
+
+
+
+
+
+    #user_action = gesture_input ()
+   # print (user_action)
