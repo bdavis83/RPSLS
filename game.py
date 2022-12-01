@@ -15,6 +15,7 @@ class Game:
         self.rules ()
         self.choose_players ()
         self.play_rounds ()
+        self.declare_winner ()
         pass
 
 
@@ -52,15 +53,15 @@ class Game:
         print ("")
 
     def choose_players(self):
-        user_choice = input("Press 1 for single player and 2 for multi-player")
+        user_choice = input("Press 1 for single player and 2 for multi-player ")
         if user_choice == "1":
             user_name = input("what is player ones name")
             self.player_one = Human(user_name)
             self.player_two = Ai()
         if user_choice == "2":
-            player_one_name = input("What is player ones name")
+            player_one_name = input("What is player ones name? ")
             self.player_one = Human(player_one_name)
-            player_two_name = input("What is player twos name")
+            player_two_name = input("What is player twos name? ")
             self.player_two = Human(player_two_name)
 
     def play_rounds(self): # check if tie, check if player one win, else player two wins
@@ -85,7 +86,17 @@ class Game:
                 print(f'{self.player_one.chosen_gesture} beats {self.player_two.chosen_gesture} one point awarded to {self.player_one.name}')
                 self.player_one.wins += 1
             else:
-                print (f"{self.player_two} wins!")
+                print (f"{self.player_two.chosen_gesture} beats {self.player_one.chosen_gesture} one point awarded to {self.player_two.name}")
+                self.player_two.wins += 1
+
+            
+    def declare_winner (self):
+        if self.player_one.wins == 2:
+            print (f'{self.player_one.name} wins!')
+        elif self.player_two.wins == 2:
+            print (f"{self.player_two.name} wins!")
+
+
 
             
         
