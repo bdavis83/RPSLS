@@ -27,10 +27,10 @@ class Game:
 
     def rules (self):
         print ("")
-        print ("These are the rules!")
+        print ("These are the rules! ")
         print ("")
         time.sleep (.5)
-        print ("Rock crushes Scissors")
+        print ("Rock crushes Scissors ")
         time.sleep (.5)
         print ("Scissors cuts Paper ")
         time.sleep (.5)
@@ -38,15 +38,15 @@ class Game:
         time.sleep (.5)
         print ("Rock crushes Lizard ")
         time.sleep (.5)
-        print ("Lizard poisons Spock")
+        print ("Lizard poisons Spock ")
         time.sleep (.5)
-        print ("Spock Smashes Scissors")
+        print ("Spock Smashes Scissors ")
         time.sleep (.5)
         print ("Scissors decapitates Lizard ")
         time.sleep (.5)
-        print ("Lizard eats Paper")
+        print ("Lizard eats Paper ")
         time.sleep (.5)
-        print ("Paper disproves Spock")
+        print ("Paper disproves Spock ")
         time.sleep (.5)
         print ("Spock vaporizes Rock ")
         time.sleep (.5)
@@ -55,7 +55,7 @@ class Game:
     def choose_players(self):
         user_choice = input("Press 1 for single player and 2 for multi-player ")
         if user_choice == "1":
-            user_name = input("what is player ones name")
+            user_name = input("what is player ones name? ")
             self.player_one = Human(user_name)
             self.player_two = Ai()
         if user_choice == "2":

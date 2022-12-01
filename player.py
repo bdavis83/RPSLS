@@ -8,7 +8,7 @@ class Player:
         pass
     
     def get_input(self):
-        user_input = input (f'Enter 0 to select Rock, 1 to select Paper 2 to select Scissors, 3 for Lizard and 4 for Spock')
+        user_input = input (f'Enter 0 to select Rock, 1 to select Paper 2 to select Scissors, 3 for Lizard and 4 for Spock ')
         try:
             converted_input = int(user_input)
         except:
