@@ -81,6 +81,9 @@ class Game:
             elif self.player_one.chosen_gesture == 'Lizard' and (self.player_two.chosen_gesture == 'Spock' or self.player_two.chosen_gesture == 'Paper'):
                 print(f'{self.player_one.chosen_gesture} beats {self.player_two.chosen_gesture} one point awarded to {self.player_one.name}')
                 self.player_one.wins += 1
+            elif self.player_one.chosen_gesture == 'Spock' and (self.player_two.chosen_gesture == 'Rock' or self.player_two.chosen_gesture == 'Scissors'):
+                print(f'{self.player_one.chosen_gesture} beats {self.player_two.chosen_gesture} one point awarded to {self.player_one.name}')
+                self.player_one.wins += 1
             
         
 
