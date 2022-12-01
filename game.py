@@ -1,16 +1,20 @@
 #from human import Human
 import time
-from player import Player
+from human import Human
+from ai import Ai
 
 class Game:
 
     def __init__ (self):
-    
+        self.player_one = None
+        self.player_two = None
         pass
 
     def run_sim (self):
         self.display_welcome ()
         self.rules ()
+        self.choose_players ()
+        self.play_rounds ()
         pass
 
 
@@ -47,7 +51,30 @@ class Game:
         time.sleep (.5)
         print ("")
 
-print (Player ("Player one"))
+    def choose_players(self):
+        user_choice = input("Press 1 for single player and 2 for multi-player")
+        if user_choice == "1":
+            user_name = input("what is player ones name")
+            self.player_one = Human(user_name)
+            self.player_two = Ai()
+        if user_choice == "2":
+            player_one_name = input("What is player ones name")
+            self.player_one = Human(player_one_name)
+            player_two_name = input("What is player twos name")
+            self.player_two = Human(player_two_name)
 
-
+    def play_rounds(self): # check if tie, check if player one win, else player two wins
+        while self.player_one.wins <2 and self.player_two.wins <2:
+            self.player_one.get_input()
+            self.player_two.get_input()
+            if self.player_one.chosen_gesture == self.player_two.chosen_gesture:
+                print("its a tie keep playing")
+            elif self.player_one.chosen_gesture == 'Rock' and (self.player_two.chosen_gesture == 'Scissors' or self.player_two.chosen_gesture == 'Lizard'):
+                print(f'{self.player_one.chosen_gesture} beats {self.player_two.chosen_gesture} one point awarded to {self.player_one.name}')
+                self.player_one.wins += 1
+            elif self.player_one.chosen_gesture == 'Scissors' and (self.player_two.chosen_gesture == 'Paper' or self.player_two.chosen_gesture == 'Lizard'):
+                print(f'{self.player_one.chosen_gesture} beats {self.player_two.chosen_gesture} one point awarded to {self.player_one.name}')
+                self.player_one.wins += 1
+            
+        
 

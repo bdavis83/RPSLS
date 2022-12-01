@@ -1,14 +1,13 @@
 from player import Player
 import random
 
-class ai (Player):
+class Ai (Player):
     def __init__ (self):
-        super ().__init__()
+        super ().__init__("AI")
 
 
-def get_input (self):
-        gesture_list = ["Rock", "Paper", "Scissor"]
-        user_input = random.choice (gesture_list)
-        print (f"AI chooses {user_input}")
+    def get_input(self):
+        self.chosen_gesture = random.choice(self.gestures)
+        print (f"AI chooses {self.chosen_gesture}")
 
        
